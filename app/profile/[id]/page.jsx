@@ -21,11 +21,13 @@ const UserProfile = () => {
     }, [params.id]);
 
     return (
-        <Profile
-            name = {userName}
-            description = {`Welcome to ${userName}'s personalized profile page. Explore ${userName}'s exceptional prompts and be inspired by the power of their imagination`}
-            data = {userPosts}
-        />
+        <Suspense>
+            <Profile
+                name = {userName}
+                description = {`Welcome to ${userName}'s personalized profile page. Explore ${userName}'s exceptional prompts and be inspired by the power of their imagination`}
+                data = {userPosts}
+            />
+        </Suspense>
     )
 }
 
